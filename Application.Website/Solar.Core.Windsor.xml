@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <facilities>
+        <facility id="FactorySupport"
+                  type="Castle.Facilities.FactorySupport.FactorySupportFacility, Castle.Windsor" />
+    </facilities>
+
+    <include uri="file://Solar.Core.Dependency.Windsor.xml" />
+    
+    <components>
+      <!-- generic Solar's IRepositoryFactory -->
+      <component id="DefaultRepositoryFactory"
+                  lifestyle="Singleton"
+                  service="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                  type="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                  factoryId="DefaultRepositoryFactoryBuilder"
+                  factoryCreate="BuildRepositoryFactory">
+        <parameters>
+          <connectionProfileName>DefaultConnection</connectionProfileName>
+        </parameters>
+      </component>
+      
+      <component id="MssqlRepositoryFactory"
+                  lifestyle="Singleton"
+                  service="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                  type="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                  factoryId="MSSQLRepositoryFactoryBuilder"
+                  factoryCreate="BuildRepositoryFactory">
+        <parameters>
+          <connectionProfileName>MsSQLConnection</connectionProfileName>
+        </parameters>
+      </component>
+
+      <component id="PostgreSqlRepositoryFactory"
+                  lifestyle="Singleton"
+                  service="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                  type="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                  factoryId="PostgreSQLRepositoryFactoryBuilder"
+                  factoryCreate="BuildRepositoryFactory">
+        <parameters>
+          <connectionProfileName>PostgreSQLConnection</connectionProfileName>
+        </parameters>
+      </component>
+    
+      <!-- specific IRepositoryFactory's builder -->
+      <component
+          id="DefaultRepositoryFactoryBuilder"
+          type="Solar.Infrastructure.RepositoryConfiguration.RepositoryFactoryBuilder_MsSql, Solar.Infrastructure.RepositoryConfiguration"
+          lifestyle="Singleton" />
+      
+      <component
+          id="MSSQLRepositoryFactoryBuilder"
+          type="Solar.Infrastructure.RepositoryConfiguration.RepositoryFactoryBuilder_MsSql, Solar.Infrastructure.RepositoryConfiguration"
+          lifestyle="Singleton" />
+
+      <component
+          id="PostgreSQLRepositoryFactoryBuilder"
+          type="Solar.Infrastructure.RepositoryConfiguration.RepositoryFactoryBuilder_PostgreSQL, Solar.Infrastructure.RepositoryConfiguration"
+          lifestyle="Singleton" />
+      
+    </components>
+</configuration>

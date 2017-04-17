@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "UnresolvableRequest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1>This webpage can't be found.</h1>
+    <p>
+		@ViewData["path"]
+    </p>
+    <p>
+		<strong>Things you can try:</strong>
+    </p>
+    <ul>
+        <li>Check the address for typos.</li>
+        <li>Use the search box above to find the information you're looking for.</li>
+        <li>Click on the logo to visit the home page.</li>
+    </ul>
+</div>

@@ -1,0 +1,192 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "";
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Apple iOS and Android stuff (do not remove) -->
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" />
+
+    <!-- Required Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/content/css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/content/css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/content/css/fonts/ptsans/stylesheet.css" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="/content/css/core/form.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/content/css/core/login.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/content/css/core/button.css" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="/content/css/mws.theme.css" media="screen" />
+
+    <!-- JavaScript Plugins -->
+    <script type="text/javascript" src="/content/js/jquery-1.7.1.min.js"></script>
+
+    <!-- jQuery-UI Dependent Scripts -->
+    <script type="text/javascript" src="/content/js/jquery-ui-effecs.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <script type="text/javascript" src="/content/plugins/placeholder/jquery.placeholder-min.js"></script>
+    <script type="text/javascript" src="/content/plugins/validate/jquery.validate-min.js"></script>
+
+    <!-- Login Script -->
+    <script type="text/javascript" src="/content/js/login.js"></script>
+    <style>
+        div#mws-sidebar-stitch, .ui-tabs .ui-tabs-nav {
+            background: none;
+        }
+
+        .mws-form-inline .mws-form-row {
+            padding-left: 0px;
+        }
+
+        .ui-tabs .ui-tabs-panel {
+            padding: 1em 1.5em;
+        }
+
+        div#mws-logo-container #mws-logo-wrap img {
+            max-height: 90px;
+            max-width: 423px;
+        }
+
+        div#mws-logo-container {
+            float: left;
+            height: 90px;
+            padding: 0 10px;
+            width: 423px;
+        }
+
+        div#mws-sidebar {
+            padding-top: 104px;
+        }
+
+        div#mws-header {
+            background: url("/content/images/banner.jpg") right top no-repeat;
+            background-color: #FFFFFF;
+            border-color: #f4ab23;
+        }
+
+        body,
+        div#mws-container {
+            background-image: url("/content/images/core/bg/stripes.png");
+        }
+
+        div#mws-sidebar-bg,
+        .mws-panel .mws-panel-header,
+        div#mws-error-container,
+        div#mws-login,
+        div#mws-login .mws-login-lock,
+        .ui-accordion .ui-accordion-header,
+        .ui-tabs .ui-tabs-nav,
+        .ui-datepicker,
+        .fc-event-skin,
+        .ui-dialog .ui-dialog-titlebar,
+        div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer,
+        div#mws-user-tools .mws-dropdown-menu .mws-dropdown-box,
+        div#mws-user-tools .mws-dropdown-menu.toggled a.mws-dropdown-trigger {
+            background-color: #1d837e;
+        }
+
+            .mws-panel .mws-panel-header span,
+            div#mws-navigation ul li.active a,
+            div#mws-navigation ul li.active span,
+            div#mws-user-tools #mws-username,
+            div#mws-navigation ul li span.mws-nav-tooltip,
+            div#mws-user-tools #mws-user-info #mws-user-functions #mws-username,
+            .ui-dialog .ui-dialog-title,
+            .ui-state-default,
+            .ui-state-active,
+            .ui-state-hover,
+            .ui-state-focus,
+            .ui-state-default a,
+            .ui-state-active a,
+            .ui-state-hover a,
+            .ui-state-focus a {
+                color: #a2d554;
+                text-shadow: 0 0 6px rgba(197, 213, 42, 0.5);
+            }
+
+            div#mws-searchbox input.mws-search-submit,
+            .mws-panel .mws-panel-header .mws-collapse-button span,
+            div.dataTables_wrapper .dataTables_paginate div,
+            div.dataTables_wrapper .dataTables_paginate span.paginate_active,
+            .mws-table tbody tr.odd:hover td,
+            .mws-table tbody tr.even:hover td,
+            .fc-state-highlight,
+            .ui-slider-horizontal .ui-slider-range,
+            .ui-slider-vertical .ui-slider-range,
+            .ui-progressbar .ui-progressbar-value,
+            .ui-datepicker td.ui-datepicker-current-day,
+            .ui-datepicker .ui-datepicker-prev .ui-icon,
+            .ui-datepicker .ui-datepicker-next .ui-icon,
+            .ui-accordion-header .ui-icon,
+            .ui-dialog-titlebar-close .ui-icon {
+                background-color: #a2d554;
+            }
+
+
+        @@media only screen and (min-width: 600px) and (max-width : 1024px) {
+        }
+
+        @@media only screen and (max-width : 599px) {
+            div#mws-logo-container #mws-logo-wrap, div#mws-logo-container #mws-logo-wrap img {
+                width: 212px;
+                height: 45px;
+            }
+
+            div#mws-logo-container {
+                height: 45px;
+                width: 212px;
+            }
+
+            div#mws-header #mws-user-info {
+                margin-left: 2px;
+            }
+
+            div#mws-header {
+                background-color: #1d837e;
+            }
+
+            .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+                padding-bottom: 0px;
+            }
+        }
+    </style>
+    <title>Đăng Nhập</title>
+</head>
+
+<body>
+
+    <div id="mws-login-wrapper" style="margin-top: -165px;">
+
+        <div id="mws-login">
+            <h1>Đăng nhập</h1>
+            <div class="mws-login-lock"><img src="/content/css/icons/24/locked-2.png" alt="" /></div>
+            <div id="mws-login-form">
+                <form class="mws-form" action="" method="post">
+                    <div class="mws-form-row">
+                        <div class="mws-form-item large">
+                            <input type="text" name="username" class="mws-login-username mws-textinput required" placeholder="Tên đăng nhập" />
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <div class="mws-form-item large">
+                            <input type="password" name="password" class="mws-login-password mws-textinput required" placeholder="Mật khẩu" />
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <input type="submit" value="Đăng nhập" class="mws-button orange mws-login-button" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

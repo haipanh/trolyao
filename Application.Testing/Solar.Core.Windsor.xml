@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <facilities>
+    <facility id="FactorySupport"
+              type="Castle.Facilities.FactorySupport.FactorySupportFacility, Castle.Windsor" />
+  </facilities>
+
+  <components>
+    <!-- generic Solar's IRepositoryFactory -->
+    <component id="DefaultRepositoryFactory"
+                lifestyle="Singleton"
+                service="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                type="Solar.Infrastructure.Repository.IRepositoryFactory, Solar.Infrastructure.Repository"
+                factoryId="DefaultRepositoryFactoryBuilder"
+                factoryCreate="BuildRepositoryFactory">
+      <parameters>
+        <connectionProfileName>DefaultConnection</connectionProfileName>
+      </parameters>
+      
+    </component>
+
+    <!-- specific IRepositoryFactory's builder -->
+    <component
+       id="DefaultRepositoryFactoryBuilder"
+       service="Solar.Infrastructure.RepositoryConfiguration.RepositoryFactoryBuilderBase, Solar.Infrastructure.RepositoryConfiguration"
+       type="Solar.Infrastructure.RepositoryConfiguration.RepositoryFactoryBuilder_InMemorySQLite, Solar.Infrastructure.RepositoryConfiguration"
+       lifestyle="Singleton"
+       factoryId="DefaultRepositoryFactoryBuilder"
+       factoryCreate="get_Instance"/>
+
+  </components>
+</configuration>

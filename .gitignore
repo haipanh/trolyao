@@ -3,3 +3,8 @@
 ################################################################################
 
 /Application.Domain/obj/Debug
+/Application.Domain/bin/Debug
+/Application.Service/obj
+/Application.Service/bin/Debug
+/Application.Website/obj/Debug
+/Application.Website/bin
